@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PP-FTIP | Privacy-Preserving Federated Threat Intelligence Protocol</title>
+  <meta name="description" content="Collaborative AI Threat Detection for SOCs powered by Zero-Knowledge Proofs (zk-SNARKs/zkML) and Verifiable Federated Learning.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Ambient glow background elements -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <div class="soc-app-container">
+    <!-- Top Cyber Header -->
+    <header class="soc-header">
+      <div class="logo-group">
+        <div class="shield-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M9 12l2 2 4-4" stroke="#00e676" stroke-width="2.5"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="header-title">PP-FTIP <span class="badge-protocol">zkML PROTOCOL</span></h1>
+          <p class="header-subtitle">Privacy-Preserving Federated Threat Intelligence Protocol</p>
+        </div>
+      </div>
+
+      <div class="header-status-group">
+        <div class="network-badge">
+          <span class="pulse-indicator"></span>
+          <span>FEDERATION: <strong>ACTIVE</strong></span>
+        </div>
+        <div class="zkp-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          <span>ZK-SNARK ENGINE: <strong>VERIFYING</strong></span>
+        </div>
+        <button id="btn-colab-launch" class="btn-colab" onclick="window.open('https://colab.research.google.com', '_blank')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M16.94 12c0-1.88-1.54-3.41-3.44-3.41s-3.44 1.53-3.44 3.41 1.54 3.41 3.44 3.41 3.44-1.53 3.44-3.41zm-6.88 0c0-1.88-1.54-3.41-3.44-3.41S3.18 10.12 3.18 12s1.54 3.41 3.44 3.41 3.44-1.53 3.44-3.41zM20.82 8.59c-1.89 0-3.43 1.53-3.43 3.41s1.54 3.41 3.43 3.41 3.43-1.53 3.43-3.41-1.54-3.41-3.43-3.41z"/>
+          </svg>
+          Launch Colab GPU
+        </button>
+      </div>
+    </header>
+
+    <!-- Stat Metric Cards Row -->
+    <section class="metrics-grid">
+      <div class="glass-card metric-card">
+        <div class="metric-label">GLOBAL DETECTION ACCURACY</div>
+        <div class="metric-value-row">
+          <span class="metric-value text-accent" id="metric-accuracy">94.8%</span>
+          <span class="metric-trend positive" id="metric-acc-delta">+4.2%</span>
+        </div>
+        <div class="metric-foot">Hold-out NSL-KDD Test Telemetry</div>
+      </div>
+
+      <div class="glass-card metric-card">
+        <div class="metric-label">THREAT DETECTION RATE (RECALL)</div>
+        <div class="metric-value-row">
+          <span class="metric-value text-cyan" id="metric-recall">96.3%</span>
+          <span class="metric-tag tag-secure">HIGH SENSITIVITY</span>
+        </div>
+        <div class="metric-foot">Zero-Day & Advanced Persistent Threats</div>
+      </div>
+
+      <div class="glass-card metric-card">
+        <div class="metric-label">FALSE ALARM RATE (FAR)</div>
+        <div class="metric-value-row">
+          <span class="metric-value text-amber" id="metric-far">3.1%</span>
+          <span class="metric-trend negative" id="metric-far-delta">-2.8%</span>
+        </div>
+        <div class="metric-foot">Minimizing SOC alert fatigue</div>
+      </div>
+
+      <div class="glass-card metric-card">
+        <div class="metric-label">POISON ATTACKS THWARTED</div>
+        <div class="metric-value-row">
+          <span class="metric-value text-danger" id="metric-quarantine-count">5 / 5</span>
+          <span class="metric-tag tag-quarantined">100% REJECTED</span>
+        </div>
+        <div class="metric-foot">Zero-Knowledge Proof Guard Active</div>
+      </div>
+    </section>
+
+    <!-- Main Workspace Split: Topology & Live Federation Round Stream -->
+    <main class="workspace-layout">
+      <!-- Left Column: Federation Topology & SOC Nodes -->
+      <div class="left-pane">
+        <div class="glass-card section-card">
+          <div class="card-header">
+            <h2 class="card-title">
+              <span class="dot-icon"></span>
+              Federated Network Topology
+            </h2>
+            <span class="badge-round" id="current-round-display">Round 5 / 5</span>
+          </div>
+
+          <!-- Network Diagram SVG -->
+          <div class="topology-container">
+            <div class="aggregator-node">
+              <div class="core-ring"></div>
+              <div class="aggregator-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </div>
+              <span class="node-title">CENTRAL AGGREGATOR</span>
+              <span class="node-sub">ZK Verifier & FedAvg</span>
+            </div>
+
+            <!-- SOC Participant Cards -->
+            <div class="soc-nodes-list" id="soc-nodes-list">
+              <!-- Dynamically populated by JS -->
+            </div>
+          </div>
+
+          <!-- Controls Bar -->
+          <div class="simulation-controls">
+            <button id="btn-prev-round" class="btn-ctrl" onclick="changeRound(-1)">◀ Prev Round</button>
+            <button id="btn-play-pause" class="btn-ctrl primary" onclick="toggleAutoPlay()">▶ Auto Play</button>
+            <button id="btn-next-round" class="btn-ctrl" onclick="changeRound(1)">Next Round ▶</button>
+            <button id="btn-rerun" class="btn-ctrl refresh" onclick="reloadSimulation()">↺ Reload Live Feed</button>
+          </div>
+        </div>
+
+        <!-- Zero-Knowledge Proof Invariant Inspector -->
+        <div class="glass-card section-card">
+          <div class="card-header">
+            <h2 class="card-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              ZK-SNARK Attestation & Invariant Inspector
+            </h2>
+          </div>
+          <div class="zkp-inspector-body" id="zkp-inspector">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Charts & Terminal Telemetry -->
+      <div class="right-pane">
+        <!-- Interactive Chart Card -->
+        <div class="glass-card section-card">
+          <div class="card-header">
+            <h2 class="card-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+              Collaborative Convergence & Accuracy
+            </h2>
+            <div class="chart-legend">
+              <span class="legend-item"><span class="legend-color legend-green"></span> Global Accuracy</span>
+              <span class="legend-item"><span class="legend-color legend-blue"></span> Threat Recall</span>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="convergenceChart" width="540" height="220"></canvas>
+          </div>
+        </div>
+
+        <!-- Confusion Matrix & Detection Breakdown -->
+        <div class="glass-card section-card">
+          <div class="card-header">
+            <h2 class="card-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              Threat Detection Matrix
+            </h2>
+            <span class="badge-eval">NSL-KDD Infiltration Test</span>
+          </div>
+
+          <div class="confusion-matrix-grid">
+            <div class="cm-cell cm-tn">
+              <span class="cm-num" id="cm-tn">420</span>
+              <span class="cm-lbl">True Negative (Benign Traffic)</span>
+            </div>
+            <div class="cm-cell cm-fp">
+              <span class="cm-num text-amber" id="cm-fp">14</span>
+              <span class="cm-lbl">False Positive (False Alarm)</span>
+            </div>
+            <div class="cm-cell cm-fn">
+              <span class="cm-num text-danger" id="cm-fn">18</span>
+              <span class="cm-lbl">False Negative (Missed Threat)</span>
+            </div>
+            <div class="cm-cell cm-tp">
+              <span class="cm-num text-accent" id="cm-tp">348</span>
+              <span class="cm-lbl">True Positive (Intercepted Attack)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cyber Terminal Log Stream -->
+        <div class="glass-card section-card terminal-card">
+          <div class="card-header">
+            <h2 class="card-title">
+              <span class="terminal-dot"></span>
+              Live Federation & Cryptographic Audit Log
+            </h2>
+            <button class="btn-clear" onclick="clearLogs()">Clear</button>
+          </div>
+          <div class="terminal-window" id="terminal-stream">
+            <!-- Stream logs -->
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="simulation_results.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
