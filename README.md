@@ -1,6 +1,6 @@
 # Privacy-Preserving Federated Threat Intelligence Protocol (PP-FTIP)
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Santhosh939s/Privacy-Preserving-Federated-Threat-Intelligence-Protocol/blob/main/colab_runner.ipynb)
 [![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://python.org)
 [![Zero-Knowledge](https://img.shields.io/badge/Cryptography-zk--SNARKs%20%2F%20zkML-00e676.svg)]()
 [![Hardware](https://img.shields.io/badge/Hardware-8GB%20RAM%20%2F%20Free%20Colab%20T4-orange.svg)]()
